@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/tela_login.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+
+      <select name="tipo" required>
+        <option value="">Escolha o tipo</option>
+        <option value="Adm">Adiministrador</option>
+        <option value="Entregador">Entregador</option>
+        <option value="Restaurante">Restaurante</option>
+      </select>
+      
+      <button type="submit">Entrar</button>
+    </form>
+    <p>Não tem uma conta? <a href="./criarConta.html">Cadastre-se aqui</a></p>
+  </div>
+</body>
+</html>

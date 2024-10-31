@@ -1,0 +1,81 @@
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilo geral da página */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+    }
+
+    /* Container do formulário */
+    .signup-container {
+      background-color: #fff;
+      padding: 1.5rem; /* Reduzido para dar um visual mais compacto */
+      border-radius: 8px; /* Reduzido o arredondamento */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 320px; /* Reduzida a largura máxima */
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Título do formulário */
+    .signup-container h2 {
+      margin-bottom: 1rem;
+      color: #333;
+      font-size: 1.6rem;
+    }
+
+    /* Estilo dos campos de entrada */
+    .signup-container input[type="text"],
+    .signup-container input[type="email"],
+    .signup-container input[type="password"],
+    .signup-container input[type="date"],
+    .signup-container select {
+      width: 100%;
+      padding: 0.6rem; /* Reduzido o padding */
+      margin: 0.4rem 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 0.9rem; /* Reduzido o tamanho da fonte */
+    }
+
+    /* Estilo do botão */
+    .signup-container button {
+      background-color: #6e8efb;
+      color: #fff;
+      padding: 0.6rem;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .signup-container button:hover {
+      background-color: #5a78d7;
+    }
+
+    /* Rodapé do formulário */
+    .signup-container p {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .signup-container p a {
+      color: #6e8efb;
+      text-decoration: none;
+    }
+
+    .signup-container p a:hover {
+      text-decoration: underline;
+    }

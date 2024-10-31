@@ -1,0 +1,79 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo geral da página */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+/* Container do formulário */
+.login-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Título do formulário */
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+/* Estilo dos campos de entrada */
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container select {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Estilo do botão */
+.login-container button {
+  background-color: #6e8efb;
+  color: #fff;
+  padding: 0.8rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #5a78d7;
+}
+
+/* Rodapé do formulário */
+.login-container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.login-container p a {
+  color: #6e8efb;
+  text-decoration: none;
+}
+
+.login-container p a:hover {
+  text-decoration: underline;
+}
