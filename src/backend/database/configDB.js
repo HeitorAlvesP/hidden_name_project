@@ -27,7 +27,11 @@ export const initializeDatabase = async () => {
 
 };
 
+let dbConnection;
+
 export const startServer = async () => {
-    const db = await initializeDatabase();
-    console.log('Banco de dados aberto com sucesso.');
-}
+  dbConnection = await initializeDatabase(); 
+  console.log('Banco de dados aberto com sucesso.');
+};
+
+export const getDatabase = () => dbConnection;
