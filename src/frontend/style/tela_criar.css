@@ -18,7 +18,7 @@ body {
 /* Container do formulário */
 .signup-container {
   background-color: #fff;
-  padding: 2rem;
+  padding: 0.8rem; /* Reduzido para 0.8rem */
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   max-width: 340px;
@@ -48,11 +48,11 @@ body {
 .signup-container input[type="date"],
 .signup-container select {
   width: 100%;
-  padding: 0.7rem;
-  margin: 0.5rem 0;
+  padding: 0.6rem; /* Reduzido para 0.6rem */
+  margin: 0.3rem 0; /* Reduzido para 0.3rem */
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Ajustado para 0.9rem */
   color: #333;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
