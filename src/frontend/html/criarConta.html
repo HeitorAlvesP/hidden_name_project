@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style/tela_criar.css">
+  <link rel="stylesheet" href="../style/tela_criar.css">
   <title>Criar Conta</title>
 </head>
 <body>
@@ -11,16 +11,13 @@
     <h2>Criar Conta</h2>
     <form action="/register" method="POST">
       <input type="text" name="nome" placeholder="Nome" required>
+      
       <input type="text" name="cpf" placeholder="CPF" required>
-      <label for="nascimento" style="display: block; text-align: left; margin-top: 0.5rem; color: #666; font-size: 0.85rem;">
-        Data de Nascimento:
-      </label>
+    
       <input type="date" id="nascimento" name="nascimento" required>
 
-      <label for="tipo" style="display: block; text-align: left; margin-top: 0.5rem; color: #666; font-size: 0.85rem;">
-        Tipo:
-      </label>
       <select id="tipo" name="tipo" required>
+        <option value="" disabled selected>Selecione um tipo</option>
         <option value="Adm">Adm</option>
         <option value="Entregador">Entregador</option>
         <option value="Restaurante">Restaurante</option>

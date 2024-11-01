@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style/tela_login.css">
+  <link rel="stylesheet" href="../style/tela_login.css">
   <title>Login</title>
 </head>
 <body>
@@ -13,9 +13,9 @@
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="senha" placeholder="Senha" required>
 
-      <select name="tipo" required>
-        <option value="">Escolha o tipo</option>
-        <option value="Adm">Adiministrador</option>
+      <select id="tipo" name="tipo" required>
+        <option value="" disabled selected>Selecione um tipo</option>
+        <option value="Adm">Adm</option>
         <option value="Entregador">Entregador</option>
         <option value="Restaurante">Restaurante</option>
       </select>
