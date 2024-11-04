@@ -14,7 +14,6 @@ export async function criar_tabelas(db){
         dataNascimento TEXT NOT NULL,
         email TEXT UNIQUE NOT NULL,
         senha TEXT NOT NULL,
-        confirmarSenha TEXT NOT NULL,
         tipoId INTEGER,
         FOREIGN KEY (tipoId) REFERENCES Tipo(id)
       );

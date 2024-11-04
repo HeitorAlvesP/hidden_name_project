@@ -3,6 +3,8 @@ import { getDatabase } from '../database/configDB.js';
 export const criarConta = async (req, res) => {
     const db = getDatabase(); 
     const { nome, cpf, dataNascimento, email, senha, confirmar_senha, tipoId } = req.body;
+
+    console.log(req.body);
   
     if (!nome || !cpf || !dataNascimento || !email || !senha || !confirmar_senha || !tipoId) {
       return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
@@ -13,7 +15,12 @@ export const criarConta = async (req, res) => {
     }
   
     try {
-      // Insira a lógica para criar o usuário no banco de dados
+
+      const existingUser = await db.get(`SELECT cpf FROM User WHERE cpf = ?`, [cpf]);
+      if (existingUser) {
+         return res.status(400).json({ message: 'CPF já cadastrado.' });
+      }
+
       const result = await db.run(
         `INSERT INTO User (cpf, nome, dataNascimento, email, senha, tipoId) VALUES (?, ?, ?, ?, ?, ?)`,
         [cpf, nome, dataNascimento, email, senha, tipoId]
