@@ -1,0 +1,1 @@
+const cpf = document.querySelector('#cpf');
