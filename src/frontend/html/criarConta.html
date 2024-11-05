@@ -27,5 +27,32 @@
         <p>Já tem uma conta? <a href="./login.html">Faça login aqui</a></p>
     </div>
 <script src="./validation/validaCPF.js"></script>
+<script>
+    document.getElementById('signupForm').addEventListener('submit', async function (e) {
+        e.preventDefault(); // Impede o envio padrão do formulário
+
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+
+        try {
+            const response = await fetch('/api/users/criarConta', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                // Redireciona para a página de login em caso de sucesso
+                window.location.href = './login.html';
+            } else {
+                const result = await response.json();
+                alert(result.message || 'Erro ao criar conta.');
+            }
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+            alert('Erro de rede ao tentar criar conta.');
+        }
+    });
+</script>
 </body>
 </html>

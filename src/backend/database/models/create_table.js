@@ -17,5 +17,14 @@ export async function criar_tabelas(db){
         tipoId INTEGER,
         FOREIGN KEY (tipoId) REFERENCES Tipo(id)
       );
+
+    `)
+}
+
+export async function insertDados(db) {
+  await db.exec(`
+      INSERT INTO Tipo (id, tipo) VALUES (1, 'administrador');
+      INSERT INTO Tipo (id, tipo) VALUES (2, 'entregador');
+      INSERT INTO Tipo (id, tipo) VALUES (3, 'estabelecimento');
     `)
 }
