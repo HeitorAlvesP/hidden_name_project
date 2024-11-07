@@ -1,0 +1,154 @@
+_SUMARIO_
+
+
+
+
+
+
+
+
+
+
+_INIT_
+=> Copie e clone o projeto em um arquivo local no seu computador
+=> Para iniciar o arquivo você irá abrir um terminal de onde está o a sua pasta e nela você irá fazer os seguintes comandos:
+
+    ->npm install 
+    esse comando irá instalar as dependencias do projeto e irá instalar as bibliotecas nescessarias para o funcionamento dele.
+
+    -> npm start
+    esse comando irá rodar o projeto em seu computador na porta 300, assim que rodar esse comando automaticamente irá iniciar um banco de dados que vai estar no arquivo src/backend/database/banco.db
+
+
+
+
+
+
+
+
+
+_SQLITE_
+=>O banco utilizado neste projeto será o *SQLITE*, diferentemente dos outros projetos que já fez cmg, esse banco de dados é um arquivo, logo não precisa de link nem servidor para funcionar.
+ Foi feita uma configuração para que quando rode o projeto pela primeira vez o banco irá ser criado automaticamente com duas tabelas USER e a tabela TIPO; na tabrla tipo será criado tb automaticamente 3 registro, 1-adm, 2-entregador, 3-estabelecimento.
+
+
+
+
+
+
+
+
+
+_APP.JS_
+=> O projeto segue uma *estrutura* simples sendo *app.js* o arquivo principal do projeto, nela temos as configurações e inicializações do projeto as inicializações do servidor e do dotenv, onde configuramos em qual port o sistema será inicializado.
+
+
+
+
+
+
+
+
+
+
+
+_FRONTEND_
+=>Sobre as pastas *FRONTEND* a estrutura é a seguinte, comçamos com 2 pastas style e a html, a do style é obvia né poupa comentarios, já a de html vou explicar a estrutura:
+    -> Dentro da pasta html temos outras 2 pastas "/javascript" e "/validation", na pasta /javascript temos os arquivos que servem, por enquanto, para redirecionamento de um arquivo para o outro
+    -> Temos a /validation, lá nós vamos colocar as validações de cadastro de usuário, como validaçõa de cpf de senha de email e coisas assim, tambem teremos as mascaras que são tipo o cpf que já vem com os pontos e tals e n deixa colocar letra, ainda ta tudo meio vago pois o alberto é muito inconpentente
+
+
+
+
+
+
+
+
+
+
+
+_ESTRURA_
+=> A estrutura abaixo é a base do projeto onde possui apenas a tela de login, estrutura base, caso seja criado mais pastas podemos editar a estrutura, fique avontade para realizar as edições 
+
+pastaClone
+    |
+    |_node_modules
+    |
+    |_src
+    |   |
+    |   |_backend
+    |   |        |
+    |   |        |_controllers
+    |   |        |        |   
+    |   |        |        |_createUserController.js
+    |   |        |        |
+    |   |        |        |_loginController.js
+    |   |        |
+    |   |        |_database
+    |   |        |        |
+    |   |        |        |_banco.db
+    |   |        |        |
+    |   |        |        |_confiDB.js
+    |   |        |        |
+    |   |        |        |_models
+    |   |        |               |
+    |   |        |               |_create_table.js
+    |   |        |
+    |   |        |_routes
+    |   |               |
+    |   |               |_userRoutes.js
+    |   |
+    |   |_frontend
+    |   |       |
+    |   |       |_html
+    |   |       |      |
+    |   |       |      |_criarConta.html
+    |   |       |      |
+    |   |       |      |_login.html
+    |   |       |      |
+    |   |       |      |_javascript
+    |   |       |      |          |
+    |   |       |      |          |_redirectLogin.js
+    |   |       |      |
+    |   |       |      |_validation
+    |   |       |                 |
+    |   |       |                 |_mascaraCPF.js
+    |   |       |                 |
+    |   |       |                 |_validaCPF.js
+    |   |       |
+    |   |       |_style
+    |   |             |
+    |   |             |_tela-criar.css
+    |   |             |
+    |   |             |_tela-login.css
+    |   |
+    |   |_public
+    |   |
+    |   |_app.js
+    |
+    |_.gitignore
+    |
+    |_intro.txt
+    |
+    |_package-lok.json
+    |
+    |_package.json
+
+
+
+
+
+
+
+
+
+_.ENV_
+=>Para o programa funcionar nós precisamos colocar o arquivo .env na raiz projeto assim como você pode ver na *estrutura*, esse arquivo será apagado daqui quando o sistema ficar pronto mas para desenvolvimento ele fica aqui por enquanto, copie tudo  apartir da linha abaixo ate a *DATABASE_URL*
+
+# Environment variables declared in this file are automatically made available to Prisma.
+# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+
+DATABASE_URL="./src/backend/database/banco.db"
