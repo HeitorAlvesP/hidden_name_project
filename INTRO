@@ -1,4 +1,16 @@
 _SUMARIO_
+=> Para o melhor entendimento do projeto estou montando uma documentação, casonde duvidas você pode consultar arqui.
+ lembre de aprtar Alt + Z para identar corretamente o arquivo
+ Para pesquiser aqui bastar apertar Ctrl + F e aparece uma barra de pesquisa no canto superior direito e digite alguma das opções
+    _INIT_ -> para a inicialização do projeto em
+    _SQLITE_-> dúvidas relacionado ao banco de dados
+    _APP.JS_-> arquivo main do projeto
+    _FRONTEND_-> explicação da estrutura e resumo dessa pasta
+    _ESTRURA_-> estrutura do projeto, caso de algo errado kkj
+    _.ENV_-> arquivo do .env para iniciar o projeto
+    _BACKEND_-> explicação de cada pasta
+
+
 
 
 
@@ -54,9 +66,23 @@ _APP.JS_
 
 _FRONTEND_
 =>Sobre as pastas *FRONTEND* a estrutura é a seguinte, comçamos com 2 pastas style e a html, a do style é obvia né poupa comentarios, já a de html vou explicar a estrutura:
-    -> Dentro da pasta html temos outras 2 pastas "/javascript" e "/validation", na pasta /javascript temos os arquivos que servem, por enquanto, para redirecionamento de um arquivo para o outro
-    -> Temos a /validation, lá nós vamos colocar as validações de cadastro de usuário, como validaçõa de cpf de senha de email e coisas assim, tambem teremos as mascaras que são tipo o cpf que já vem com os pontos e tals e n deixa colocar letra, ainda ta tudo meio vago pois o alberto é muito inconpentente
+    -> Dentro da pasta *html* temos outras 2 pastas "/javascript" e "/validation", na pasta /javascript temos os arquivos que servem, por enquanto, para redirecionamento de um arquivo para o outro
+        -> Temos a */validation*, lá nós vamos colocar as validações de cadastro de usuário, como validaçõa de cpf de senha de email e coisas assim, tambem teremos as mascaras que são tipo o cpf que já vem com os pontos e tals e n deixa colocar letra, ainda ta tudo meio vago pois o alberto é muito inconpentente
 
+
+
+
+
+
+
+
+
+
+_BACKEND_
+=> A pasta backend tem a parte que linca com banc de dados no servidor, dentro dela temos algumas pastas, controllers, database, routes.
+    -> Dentro da *controllers* temos as pastas que realizam as funções do crud onde é dividida por cada parte do crud
+    ->Dentro da *database* temos tudo relacionado a banco de dados, o arquivo do banco de dados tb se localiza ai, temos as configurações e a pasta *modelo* fica as tabelas que são criadas junto com o banco, onde fica os camando de sql
+    -> Pasta *routes* é onde se localiza as rota
 
 
 
