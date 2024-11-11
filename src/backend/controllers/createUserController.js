@@ -1,4 +1,5 @@
 import { getDatabase } from '../database/configDB.js';
+import { validarCPF } from '../validation/validaçãoCPF.js';
 
 export const criarConta = async (req, res) => {
     const db = getDatabase(); 
@@ -13,6 +14,10 @@ export const criarConta = async (req, res) => {
     if (senha !== confirmar_senha) {
       return res.status(400).json({ message: 'As senhas não correspondem.' });
     }
+
+    if (!validarCPF(cpf)) {
+      return res.status(400).json({ message: 'CPF inválido.' });
+    }
   
     try {
 
@@ -21,12 +26,26 @@ export const criarConta = async (req, res) => {
          return res.status(400).json({ message: 'CPF já cadastrado.' });
       }
 
+      const existingUserByEmail = await db.get(`SELECT email FROM User WHERE email = ?`, [email]);
+      if (existingUserByEmail) {
+         return res.status(400).json({ message: 'Email já cadastrado.' });
+      }
+      
+      const nascimento = new Date(dataNascimento);
+      const hoje = new Date();
+      const diffTime = hoje - nascimento; 
+      const diffDays = diffTime / (1000 * 3600 * 24); 
+
+      if (diffDays < 2) {
+        return res.status(400).json({ message: 'Data de nascimento invalida.' });
+      }
+
       const result = await db.run(
         `INSERT INTO User (cpf, nome, dataNascimento, email, senha, tipoId) VALUES (?, ?, ?, ?, ?, ?)`,
         [cpf, nome, dataNascimento, email, senha, tipoId]
       );
   
-      res.status(201).json({ id: result.lastID, message: 'Conta criada com sucesso!' });
+      res.json({ success: true });
 
     } catch (error) {
       res.status(500).json({ message: 'Erro ao criar conta', error });

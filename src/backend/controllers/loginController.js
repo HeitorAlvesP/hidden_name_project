@@ -16,8 +16,7 @@ export const realizaLogin = async (req, res) => {
             // res.redirect('/html/telas_home/homeAdm.html');
         } else {
             return res.status(401).json({ success: false, message: 'Email ou senha incorretos.' });
-            // res.status(401).json({ message: 'Email ou senha incorretos.' });
-            
+            // res.status(401).json({ message: 'Email ou senha incorretos.' });   
         }
     } catch (error) {
         res.status(500).json({ message: 'Erro ao realizar login', error });
