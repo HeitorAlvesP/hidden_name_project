@@ -4,18 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/tela_login.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <title>Login</title>
 </head>
 <body>
   <div class="login-container">
     <h2>Login</h2>
-    <form action="/login" method="POST">
+    <form action="/api/users/login" method="POST" id="loginForm">
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="senha" placeholder="Senha" required>
 
-      <button type="submit"> <a href="home.html"> Entrar </a> </button>
+      <button type="submit">Entrar</button>
     </form>
     <p>Não tem uma conta? <a href="./criarConta.html">Cadastre-se aqui</a></p>
   </div>
+
+  <div id="errorModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="error-icon">✕</span>
+        </div>
+        <div class="modal-body">
+            <!-- <h2>ERROR</h2> -->
+            <p>Verifique email e senha!</p>
+        </div>
+        <div class="modal-footer">
+            <button id="closeModal">OK</button>
+        </div>
+    </div>
+  </div>
+  <script src="./validation/msgErroLogin.js"></script>
 </body>
 </html>
