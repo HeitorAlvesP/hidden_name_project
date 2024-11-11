@@ -24,7 +24,7 @@ $(document).ready(function() {
             }
         }).fail(function() {
             showErrorModal();
-            $('#errorModal .modal-body p').text('Erro ao comunicar com o servidor.');
+            $('#errorModal .modal-body p').text('Verifique Login e senha.');
         });
     });
 })
