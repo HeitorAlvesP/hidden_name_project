@@ -3,7 +3,7 @@ import { validarCPF } from '../validation/validaçãoCPF.js';
 
 export const criarConta = async (req, res) => {
     const db = getDatabase(); 
-    const { nome, cpf, dataNascimento, email, senha, confirmar_senha, tipoId } = req.body;
+    let { nome, cpf, dataNascimento, email, senha, confirmar_senha, tipoId } = req.body;
 
     console.log(req.body);
   
@@ -18,6 +18,8 @@ export const criarConta = async (req, res) => {
     if (!validarCPF(cpf)) {
       return res.status(400).json({ message: 'CPF inválido.' });
     }
+
+    cpf = cpf.replace(/\D/g, '');
   
     try {
 
@@ -40,11 +42,12 @@ export const criarConta = async (req, res) => {
         return res.status(400).json({ message: 'Data de nascimento invalida.' });
       }
 
+      cpf = cpf.replace(/\D/g, '');
       const result = await db.run(
         `INSERT INTO User (cpf, nome, dataNascimento, email, senha, tipoId) VALUES (?, ?, ?, ?, ?, ?)`,
         [cpf, nome, dataNascimento, email, senha, tipoId]
       );
-  
+      
       res.json({ success: true });
 
     } catch (error) {
